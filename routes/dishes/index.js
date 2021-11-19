@@ -8,8 +8,8 @@
 
 const router = require('express').Router()
 
-const Dishes = require('../../models/dishes')
-const Restaurant = require('../../models/restaurant')
+const Dishes = require('../../models/Dishes')
+const Restaurant = require('../../models/Restaurant')
 
 router.route('/')
 

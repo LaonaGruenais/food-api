@@ -2,7 +2,7 @@ const router = require('express').Router()
 // Libraire de gestion des tokens
 const { generateToken } = require('../../helpers/TokenHelper')
 
-const User = require('../../models/user')
+const User = require('../../models/User')
 
 router.route('/register')
   .post((req, res) => {

@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const Restaurant = require('../../models/restaurant')
+const Restaurant = require('../../models/Restaurant')
 
 router.route('/') // correspond à /restaurants
 // GET lister les éléments (récupérer de la data)

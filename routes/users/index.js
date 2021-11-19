@@ -6,7 +6,7 @@
 
 const router = require('express').Router()
 
-const User = require('../../models/user')
+const User = require('../../models/User')
 
 const withAuth = require('../../middlewares/authMiddleware')
 const { extractIdFromRequestAuthHeader } = require('../../helpers/TokenHelper')
