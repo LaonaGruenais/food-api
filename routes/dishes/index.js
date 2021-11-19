@@ -14,13 +14,19 @@ const Restaurant = require('../../models/restaurant')
 router.route('/')
 
   .get((req, res) => {
-    Dishes.find((error, result) => {
-      if (error) {
-        return res.status(500).send('Erreur lors de la récupération de la vaisselle ')
-      } else {
+  // Récupération des plats pour 1 restaurant donné
+    const id = req.query.id
+    if (id) {
+      Dishes.find({ restaurant: id }, (error, result) => {
+        if (error) return res.send(500).send('Erreur lors de la récupération des plats')
         return res.send(result)
-      }
-    })
+      })
+    } else {
+      Dishes.find((error, result) => {
+        if (error) return res.send(500).send('Erreur lors de la récupération des plats')
+        return res.send(result)
+      })
+    }
   })
 
   .post((req, res) => {

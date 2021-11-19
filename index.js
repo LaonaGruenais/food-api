@@ -28,7 +28,7 @@ const router = express.Router()
 const mongoDbConnectionsString = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`
 
 mongoose.connect(mongoDbConnectionsString, null, error => {
-  if (error) throw Error
+  if (error) throw Error(error)
 })
 
 // Récupération de la connexion
@@ -58,6 +58,10 @@ app.use('/auth', require('./routes/users/auth'))
 app.use('/me', require('./routes/users'))
 
 app.use('/dishes', require('./routes/dishes'))
+
+app.use('/payment', require('./routes/payment'))
+
+app.use('/order', require('./routes/order'))
 
 /* lancement du server */
 app.listen(port, () => {
