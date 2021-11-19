@@ -9,7 +9,7 @@ const OrderSchema = Schema({
   },
   cart: [{
     type: Schema.Types.ObjectId,
-    ref: 'Dish',
+    ref: 'Dishes',
     required: true
   }],
   address: {

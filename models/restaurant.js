@@ -14,7 +14,7 @@ const RestaurantSchema = Schema({
   },
   dishes: [{
     type: Schema.Types.ObjectId,
-    ref: 'dishes'
+    ref: 'Dishes'
   }]
 }, { timestamps: true })
 
